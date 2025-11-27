@@ -1,3 +1,4 @@
-INSERT INTO USERS (NAME, EMAIL, PASSWORD)
+-- users
+INSERT INTO users (name, email, password)
 VALUES ('テストユーザー', 'test@example.com', '$2a$10$N9qPP773ZD.NDHXVja033./tulB5ELlddTNt7gpMClRLr7VA0ajXC');
 
