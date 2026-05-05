@@ -19,11 +19,11 @@ public abstract class AbstractAuditingEntity {
 
     /** 作成日時 */
     @CreatedDate
-    @Column(name = "create_date", nullable = false, updatable = false)
-    private LocalDateTime createDate;
+    @Column(name = "createdatetime", nullable = false, updatable = false)
+    private LocalDateTime createDateTime;
 
     /** 更新日時 */
     @LastModifiedDate
-    @Column(name = "update_date", nullable = false)
-    private LocalDateTime updateDate;
+    @Column(name = "updatedatetime", nullable = false)
+    private LocalDateTime updateDateTime;
 }

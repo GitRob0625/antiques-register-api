@@ -9,13 +9,16 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
+/**
+ * ユーザー（users）に対するデータアクセス層
+ */
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>, JpaSpecificationExecutor<User> {
 
     /**
      * メールアドレスをキーに、ユーザ情報を取得する。
-     * @param email 検索するメールアドレス
+     * @param email1 検索するメールアドレス
      */
-    Optional<User> findByEmail(@Param("email") String email);
+    Optional<User> findByEmail1(@Param("email1") String email);
 }
 

@@ -12,27 +12,39 @@ import java.time.LocalDateTime;
 @Table(name = "users")
 @Getter
 @Setter
-@SQLRestriction("delete_date IS NULL")
 public class User extends AbstractAuditingEntity {
 
     /** ユーザID（主キー） */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "userid")
     private Long id;
 
-    /** メールアドレス */
-    @Column(name = "email", nullable = false, unique = true)
-    private String email;
+    /** ユーザー名 */
+    @Column(name = "username", nullable = false)
+    private String name;
 
-    /** パスワードハッシュ値 */
+    /** パスワード（ハッシュ値） */
     @Column(name = "password", nullable = false)
     private String password;
 
-    /** ユーザ名 */
-    @Column(name = "name", nullable = false)
-    private String name;
+    /** Eメール１ */
+    @Column(name = "email1", nullable = false)
+    private String email1;
 
-    /** 論理削除日時 */
-    @Column(name = "delete_date")
-    private LocalDateTime deleteDate;
+    /** 削除フラグ */
+    @Column(name = "deleteflag", nullable = false)
+    private Integer deleteFlag;
+
+    /** 権限フラグ */
+    @Column(name = "authorityflag", nullable = false)
+    private Integer authorityFlag;
+
+    /** 作成者 */
+    @Column(name = "createuser", nullable = false)
+    private String createUser;
+
+    /** 更新者 */
+    @Column(name = "updateuser")
+    private String updateUser;
 }
